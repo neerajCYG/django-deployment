@@ -1,0 +1,28 @@
+<!DOCTYPE html> {% extends 'third_app/base.html' %} {% block body_block %}
+
+<div class="jumbotron">
+    <h1>Please log in</h1>
+
+    <form action="{% url 'third_app:user_login'%}" method="POST">
+        {% csrf_token %}
+
+        <label for="username">Username:</label>
+
+        <input type="text" name="username" placeholder="Enter your username">
+        <label for="password">Password:</label>
+        <input type="password" name="password" placeholder="Enter your Password">
+        <input type="submit" name="" value="Login">
+
+    </form>
+    </br>
+    <p>Do not have any account? Please register here <a class="navbar-link" href="{% url 'third_app:register' %}">REGISTRATION</a>
+    </p>
+
+
+
+
+
+</div>
+
+
+{% endblock %}
